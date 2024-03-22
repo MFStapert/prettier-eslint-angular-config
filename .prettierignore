@@ -1,5 +1,6 @@
-build
+# Add files here to ignore them from prettier formatting
 coverage
-dist
-e2e
+.angular
+
+.nx/cache
 node_modules

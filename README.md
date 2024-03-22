@@ -1,71 +1,54 @@
 # Prettier-angular-config
 
-Demo project for prettier config
+Demo project for prettier + eslint config
 
-Vraag is of we dit op root level willen
+Je moet git hooks op root level inrichten, in dit project is dit gedaan met husky, maar er zijn alternatieven.
 
-Zou fijn zijn voor configuratie en onderhoud
+Alternatieven die door prettier aangeraden worden:
+
+- https://pre-commit.com/ (python)
+- https://alirezanet.github.io/Husky.Net/ (dotnet)
 
 ## Setup
 
 `npm ci`
 `npx husky init`
 
-## Reasoning behind files
+## Bestanden
 
 ### .editorconfig
 
-Wil je op zelfde niveau hebben omdat dit implicaties heeft voor prettier
+Een `.editorconfig` op root niveau dwingt wat formatting af in je editor, maar je moet hier niet op leunen voor formatting.
 
-Zo min mogelijk specifieke settings hierin en alle JS formatting aan prettier overlaten
+Je wilt zo min mogelijk specifieke settings hierin en alle JS formatting aan prettier overlaten.
+
+`insert_final_newline` en `charset` worden niet door prettier afgedwongen.
 
 ### .prettierignore
 
-Ignore file, ondersteund ook file extensies dus je kan b.v. je C# code negeren.
+Ignore file, ondersteunt ook file extensies dus je kan b.v. je C# code negeren.
+
+Je kan ook paden opgeven dus je kan b.v. een backend folder negeren
 
 ### .prettierrc
 
-`"printWidth": 80,`
-
-Default van prettier, vrij smal maar maakt nakijken en werken met meerdere tabs erg fijn.
-
-`"tabWidth": 2,`
-
-Nodig met width 80
-
-`"useTabs": false,`
-
-Nodig met width 80
-
-`"semi": true,`
-
-`;` op het einde van elke line
-
 `"singleQuote": true,`
 
-Enkele comma
+Single quotes `'` ipv `"`, resulteert in kortere regels
 
-`"quoteProps": "consistent",`
+`"arrowParens": "avoid",`
 
-Mijn voorkeur om dit consistent te houden
-
-`"trailingComma": "none",`
-
-Mijn voorkeur om dit niet te doen
-
-`"bracketSpacing": true,`
-
-Default van prettier
-
-`"bracketSameLine": true,`
-
-Vermijd dat `<`op een newline komt
-
-`"arrowParens": "avoid"`
+Ik vindt niet dat je `(x) => {}` moet doen `ipv x => {}`
 
 `"singleAttributePerLine": true`
 
-Mijn voorkeur
+Meest leesbare optie voor angular imo; zorgt dat elk attribuut op een losse regel komt te staan.
+
+`"bracketSameLine": true,`
+`"htmlWhitespaceSensitivity": "ignore",`
+
+De combinatie van deze 2 properties zorgt dat je geen `>` op een newline krijgt.
+Zie deze [post](https://trungvose.com/experience/prettier-prevent-html-closing-tag-new-line/)
 
 ## Scripts
 
@@ -73,12 +56,9 @@ Mijn voorkeur
 
 Format alles, .prettierignore zou alles moeten afvangen wat niet geformat mag worden
 
-Vermijd npx met het aanroepen van workspace script.
-Je kan hiermee een versie van een package aanroepen die anders is dan in je package.json file
-
 `"check:prettier": "prettier . --check"`
 
-Check alles, dit gebruik je in CI
+Check alles, dit gebruik je in CI.
 
 Interesante CLI flags:
 
@@ -93,13 +73,3 @@ Wordt aangeraden voor precommit, er zijn andere opties
 
 Git hooks kun je alleen opslaan in root niveau
 Dus als je geen package.json op root wilt hebben moet je een niet JS optie kiezen
-
-## Plugins
-
-### eslint-config-prettier
-
-Wordt aangeraden als je eslint gebruikt
-
-### prettier-plugin-organize-imports
-
-Goeie QoL plugin, zorgt dat
