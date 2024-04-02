@@ -3,5 +3,10 @@
   "arrowParens": "avoid",
   "singleAttributePerLine": true,
   "bracketSameLine": true,
-  "htmlWhitespaceSensitivity": "ignore"
+  "htmlWhitespaceSensitivity": "ignore",
+  "plugins": [
+    "prettier-plugin-organize-imports",
+    "prettier-plugin-organize-attributes",
+    "prettier-plugin-css-order"
+  ]
 }

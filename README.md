@@ -73,3 +73,17 @@ Wordt aangeraden voor precommit, er zijn andere opties
 
 Git hooks kun je alleen opslaan in root niveau
 Dus als je geen package.json op root wilt hebben moet je een niet JS optie kiezen
+
+## Plugins
+
+### [prettier-plugin-organize-imports](https://www.npmjs.com/package/prettier-plugin-organize-imports)
+
+Sorteert imports en verwijderd ongebruikte imports, dit is een must IMO aangezien elke editor dit anders doet.
+
+### [prettier-plugin-css-order](https://www.npmjs.com/package/prettier-plugin-css-order)
+
+Sorteert CSS properties, optioneel.
+
+### [prettier-plugin-organize-attributes](https://www.npmjs.com/package/prettier-plugin-organize-attributes)
+
+Sorteert HTML attributen, optioneel.

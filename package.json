@@ -7,7 +7,10 @@
   "devDependencies": {
     "husky": "9.0.11",
     "lint-staged": "15.2.2",
-    "prettier": "3.2.5"
+    "prettier": "3.2.5",
+    "prettier-plugin-css-order": "2.1.2",
+    "prettier-plugin-organize-attributes": "1.0.0",
+    "prettier-plugin-organize-imports": "3.2.4"
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
