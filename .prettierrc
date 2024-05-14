@@ -1,12 +1,6 @@
 {
+  "printWidth": 100,
   "singleQuote": true,
   "arrowParens": "avoid",
-  "singleAttributePerLine": true,
-  "bracketSameLine": false,
-  "htmlWhitespaceSensitivity": "ignore",
-  "plugins": [
-    "prettier-plugin-organize-imports",
-    "prettier-plugin-organize-attributes",
-    "prettier-plugin-css-order"
-  ]
+  "plugins": ["prettier-plugin-organize-attributes", "prettier-plugin-organize-imports"]
 }

@@ -4,7 +4,8 @@
     "**/build/**",
     "**/coverage/**",
     "**/dist/**",
-    "**/generated/**"
+    "**/generated/**",
+    "**/node_modules/**"
   ],
   "extends": [
     "prettier"
@@ -19,26 +20,9 @@
         "plugin:@angular-eslint/template/process-inline-templates"
       ],
       "rules": {
-        "@angular-eslint/prefer-standalone": [
-          "error"
-        ],
-        "@angular-eslint/directive-selector": [
-          "error",
-          {
-            "type": "attribute",
-            "prefix": "app",
-            "style": "camelCase"
-          }
-        ],
-        "@angular-eslint/component-selector": [
-          "error",
-          {
-            "type": "element",
-            "prefix": "app",
-            "style": "kebab-case"
-          }
-        ],
-        "no-console": ["error", { "allow": ["warn", "error"] }]
+        "no-console": ["error", { "allow": ["warn", "error"] }],
+        "@angular-eslint/prefer-standalone": "error",
+        "@angular-eslint/use-lifecycle-interface": "error"
       }
     },
     {
@@ -48,12 +32,8 @@
         "plugin:@angular-eslint/template/accessibility"
       ],
       "rules": {
-        "@angular-eslint/template/prefer-control-flow": [
-          "error"
-        ],
-        "@angular-eslint/template/prefer-ngsrc": [
-          "error"
-        ]
+        "@angular-eslint/template/prefer-control-flow": "error",
+        "@angular-eslint/template/prefer-ngsrc": "error"
       }
     }
   ]

@@ -1,6 +1,4 @@
 # Add files here to ignore them from prettier formatting
-coverage
 .angular
-
-.nx/cache
+coverage
 node_modules
